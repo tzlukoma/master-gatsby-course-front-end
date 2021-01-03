@@ -10,6 +10,9 @@ export default {
   },
   plugins: [
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-image',
     {
       resolve: 'gatsby-source-sanity',
       options: {
