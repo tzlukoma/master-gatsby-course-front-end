@@ -39,21 +39,23 @@ const SliceMasterStyles = styled.div`
 export default function SlicemastersPage({ data }) {
   const slicemasters = data.slicemasters.nodes;
 
-  console.log(data);
+  console.log(data.slicemasters.totalCount);
   return (
-    <SliceMasterGrid>
-      {slicemasters.map((person) => (
-        <SliceMasterStyles key={person.id}>
-          <Link to={`/slicemaster/${person.slug.current}`}>
-            <h2>
-              <span className="mark">{person.name}</span>
-            </h2>
-          </Link>
-          <Img fluid={person.image.asset.fluid} />
-          <p className="description">{person.description}</p>
-        </SliceMasterStyles>
-      ))}
-    </SliceMasterGrid>
+    <>
+      <SliceMasterGrid>
+        {slicemasters.map((person) => (
+          <SliceMasterStyles key={person.id}>
+            <Link to={`/slicemaster/${person.slug.current}`}>
+              <h2>
+                <span className="mark">{person.name}</span>
+              </h2>
+            </Link>
+            <Img fluid={person.image.asset.fluid} />
+            <p className="description">{person.description}</p>
+          </SliceMasterStyles>
+        ))}
+      </SliceMasterGrid>
+    </>
   );
 }
 
