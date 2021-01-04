@@ -27,7 +27,6 @@ const SingleBeerStyles = styled.div`
 export default function BeersPage({ data }) {
   const beers = data.beers.nodes;
 
-  console.log(beers);
   return (
     <>
       <h2 className="center">We have {beers.length} Beers Available</h2>

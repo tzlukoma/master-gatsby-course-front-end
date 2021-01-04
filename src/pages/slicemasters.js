@@ -40,7 +40,6 @@ const SliceMasterStyles = styled.div`
 export default function SlicemastersPage({ data, pageContext }) {
   const slicemasters = data.slicemasters.nodes;
 
-  console.log(data.slicemasters.totalCount);
   return (
     <>
       <Pagination
@@ -68,7 +67,7 @@ export default function SlicemastersPage({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query($skip: Int = 0, $pageSize: Int = 2) {
+  query($skip: Int = 0, $pageSize: Int = 4) {
     slicemasters: allSanityPerson(limit: $pageSize, skip: $skip) {
       totalCount
       nodes {
